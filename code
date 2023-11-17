@@ -1,0 +1,29 @@
+import random
+
+choices = {
+    0: "Rock",
+    1: "Paper",
+    2: "Scissor"
+}
+
+outcomes = {
+    ("Rock", "Rock"): "It's a draw!",
+    ("Rock", "Paper"): "You lose :(",
+    ("Rock", "Scissor"): "You win!",
+    ("Paper", "Rock"): "You win!",
+    ("Paper", "Paper"): "It's a draw!",
+    ("Paper", "Scissor"): "You lose :(",
+    ("Scissor", "Rock"): "You lose :(",
+    ("Scissor", "Paper"): "You win!",
+    ("Scissor", "Scissor"): "It's a draw!"
+}
+
+player_choice = input("Enter your choice (Rock/Paper/Scissor): ")
+computer_choice = choices[random.randint(0, 2)]
+
+if player_choice in choices.values():
+    print(f"You picked: {player_choice}")
+    print(f"Computer picked: {computer_choice}")
+    print(outcomes[(player_choice, computer_choice)])
+else:
+    print("Input was invalid")
